@@ -28,12 +28,12 @@ body{
     cursor: pointer;
     transform: scale(1);
     transform-style: preserve-3d; /* Não deixa o elemento achatado no plano */
-    transition: transform 0.9s;
+    transition: transform .9s;
 }
 
 .card:active{
-    transform: scale(0.90);
-    transition: transform .2s;
+    transform: scale(0.97);
+    transition: transform .3s;
 }
 
 .card-front,
@@ -44,14 +44,15 @@ body{
     position: absolute;
     border-radius: 5px;
     background: #ffffff;
+    backface-visibility: hidden;
 }
 
 .card-front{
-    transform: rotateY(180);
+    transform: rotateY(180deg);
 }
 
 /* Flip Card animation  */
 
 .card.flip{
-    transform: rotateY(180);
+    transform: rotateY(180deg);
 }
