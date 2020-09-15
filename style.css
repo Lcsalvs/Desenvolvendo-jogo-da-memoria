@@ -16,6 +16,7 @@ body{
     margin: auto;
     display: flex;
     flex-wrap: wrap;
+    perspective: 1000px;
 }
 
 .card{
@@ -26,6 +27,13 @@ body{
     box-shadow: 1px 1px 1px rgba(1, 1, 1, 0.5);
     cursor: pointer;
     transform: scale(1);
+    transform-style: preserve-3d; /* Não deixa o elemento achatado no plano */
+    transition: transform 0.9s;
+}
+
+.card:active{
+    transform: scale(0.90);
+    transition: transform .2s;
 }
 
 .card-front,
@@ -36,4 +44,14 @@ body{
     position: absolute;
     border-radius: 5px;
     background: #ffffff;
+}
+
+.card-front{
+    transform: rotateY(180);
+}
+
+/* Flip Card animation  */
+
+.card.flip{
+    transform: rotateY(180);
 }
